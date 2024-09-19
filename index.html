@@ -7,6 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>My Fantasy Team</h1>
+    <div id="fantasySpace">
+        <div class="card" id="pg"></div>
+        <div class="card" id="sg"></div>
+        <div class="card" id="sf"></div>
+        <div class="card" id="pf"></div>
+        <div class="card" id="c"></div>
+    </div>
+    <div id="searchPlayerDiv">
+        <form>
+            <select id="selectOption">
+                <option value="PG">PG</option>
+                <option value="SG">SG</option>
+                <option value="SF">SF</option>
+                <option value="PF">PF</option>
+                <option value="PG">PG</option>
+            </select>
+            <input type="range" id="points"  min="0" max="20000">
+            <input type="range" id="points-twoPercent:"  min="0" max="100">
+            <input type="range" id="points-threePercent:"  min="0" max="100"> 
+            <input type="submit" id="submitSearch">       
+        </form>
+    </div>
+    <div class="table">
+        <table>
+            <thead>
+                <th>Player</th>
+                <th>Position</th>
+                <th>Points</th>
+                <th>FG%</th>
+                <th>3P%</th>
+                <th>Action</th>
+            </thead>
+        </table>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
