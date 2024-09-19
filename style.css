@@ -72,6 +72,9 @@ p{
     padding: 5px;
 }
 
+tbody{
+    width: 100%;
+}
 
 table {
     width: 100%;
@@ -84,11 +87,19 @@ th, td {
     border: 1px solid #F4F4F4;
     padding: 12px;
     text-align: center;
+    width: 100%;
+
+   
+
 }
 
 td{
     color: #000000;
+   
+
 }
+
+
 
 th {
     background-color: #C80528;

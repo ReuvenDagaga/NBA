@@ -60,11 +60,11 @@ function getResaultFilter(req) {
 var myForm = (_a = document.querySelector('#myForm')) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', function (event) { event.preventDefault(); });
 var selectOption = document.querySelector('#selectOption');
 var points = document.querySelector('#points');
-points.addEventListener('input', function () { points.textContent = points.value; });
+points.addEventListener('input', function () { return points.textContent = points.value; });
 var pointstwoPercent = document.querySelector('#points-twoPercent');
-pointstwoPercent.addEventListener('input', function () { pointstwoPercent.textContent = pointstwoPercent.value; });
+pointstwoPercent.addEventListener('input', function () { return pointstwoPercent.textContent = pointstwoPercent.value; });
 var pointsthreePercent = document.querySelector('#points-threePercent');
-pointsthreePercent.addEventListener('input', function () { pointsthreePercent.textContent = pointsthreePercent.value; });
+pointsthreePercent.addEventListener('input', function () { return pointsthreePercent.textContent = pointsthreePercent.value; });
 var pointsLabel = document.querySelector('#pointsLabel');
 var twoPercentLabel = document.querySelector('#twoPercentLabel');
 var threePercentLabel = document.querySelector('#threePercentLabel');

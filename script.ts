@@ -36,11 +36,11 @@ const selectOption = document.querySelector('#selectOption') as HTMLSelectElemen
 
 
 const points = document.querySelector('#points') as HTMLInputElement;
-points.addEventListener('input', () => {points.textContent = points.value})
+points.addEventListener('input', () => points.textContent = points.value)
 const pointstwoPercent = document.querySelector('#points-twoPercent') as HTMLInputElement;
-pointstwoPercent.addEventListener('input', () => {pointstwoPercent.textContent = pointstwoPercent.value})
+pointstwoPercent.addEventListener('input', () => pointstwoPercent.textContent = pointstwoPercent.value)
 const pointsthreePercent = document.querySelector('#points-threePercent') as HTMLInputElement;
-pointsthreePercent.addEventListener('input', () => {pointsthreePercent.textContent = pointsthreePercent.value})
+pointsthreePercent.addEventListener('input', () => pointsthreePercent.textContent = pointsthreePercent.value)
 
 const pointsLabel = document.querySelector('#pointsLabel') as HTMLLabelElement;
 const twoPercentLabel = document.querySelector('#twoPercentLabel') as HTMLLabelElement;
