@@ -34,6 +34,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var _a;
 var urlFilter = 'https://nbaserver-q21u.onrender.com/api/filter/';
 function getResaultFilter(req) {
     return __awaiter(this, void 0, void 0, function () {
@@ -56,18 +57,34 @@ function getResaultFilter(req) {
         });
     });
 }
-var askNewPlayer = {
-    position: 'PG',
-    twoPercent: 5,
-    threePercent: 5,
-    points: 5
-};
-console.log(getResaultFilter(askNewPlayer));
-getResaultFilter(askNewPlayer);
+var myForm = (_a = document.querySelector('#myForm')) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', function (event) { event.preventDefault(); });
+var selectOption = document.querySelector('#selectOption');
+var points = document.querySelector('#points');
+points.addEventListener('input', function () { points.textContent = points.value; });
+var pointstwoPercent = document.querySelector('#points-twoPercent');
+pointstwoPercent.addEventListener('input', function () { pointstwoPercent.textContent = pointstwoPercent.value; });
+var pointsthreePercent = document.querySelector('#points-threePercent');
+pointsthreePercent.addEventListener('input', function () { pointsthreePercent.textContent = pointsthreePercent.value; });
+var pointsLabel = document.querySelector('#pointsLabel');
+var twoPercentLabel = document.querySelector('#twoPercentLabel');
+var threePercentLabel = document.querySelector('#threePercentLabel');
+pointsLabel.textContent = points.value;
+twoPercentLabel.textContent = pointstwoPercent.value;
+pointsthreePercent.textContent = pointsthreePercent.value;
+function searchPlayers() {
+    var askNewPlayer = {
+        position: selectOption.value,
+        twoPercent: Number(pointsthreePercent.value),
+        threePercent: Number(pointstwoPercent.value),
+        points: Number(points.value)
+    };
+    getResaultFilter(askNewPlayer);
+}
 var table = document.querySelector(".table");
 var tbody = document.createElement("tbody");
 table.appendChild(tbody);
 function pushPlayerToTable(players) {
+    tbody.innerHTML = "";
     players.forEach(function (p) {
         var trow = document.createElement("tr");
         var tPlayer = document.createElement("td");
@@ -80,6 +97,7 @@ function pushPlayerToTable(players) {
         btnPushToFantasy.classList.add("btnPushToFantasy");
         btnPushToFantasy.textContent = "Add Damian to Current Team";
         tAction.appendChild(btnPushToFantasy);
+        btnPushToFantasy.addEventListener('click', function (event) { return pushPlayerToFantasy(p); });
         tPlayer.textContent = p.playerName;
         tPosition.textContent = p.position;
         tPoints.textContent = p.points.toString();
@@ -94,4 +112,94 @@ function pushPlayerToTable(players) {
         trow.appendChild(tAction);
         trow.appendChild(tAction);
     });
+}
+function pushPlayerToFantasy(player) {
+    var pg = document.querySelector('#pg');
+    var sg = document.querySelector('#sg');
+    var sf = document.querySelector('#sf');
+    var pf = document.querySelector('#pf');
+    var c = document.querySelector('#c');
+    var blueHead = document.createElement('p');
+    blueHead.classList.add('blue-head');
+    var name = document.createElement('p');
+    var tProsent = document.createElement('p');
+    var treeProsent = document.createElement('p');
+    var points = document.createElement('p');
+    switch (player.position) {
+        case "PG":
+            pg.innerHTML = "";
+            blueHead.textContent = "Point Guard";
+            name.textContent = player.playerName;
+            treeProsent.textContent = "Tree Prosent: " + player.threePercent.toString();
+            +"%";
+            tProsent.textContent = "Tow Prosent: " + player.twoPercent.toString();
+            +"%";
+            points.textContent = "Points: " + player.points.toString();
+            pg.appendChild(blueHead);
+            pg.appendChild(name);
+            pg.appendChild(tProsent);
+            pg.appendChild(treeProsent);
+            pg.appendChild(points);
+            break;
+        case "SG":
+            sg.innerHTML = "";
+            blueHead.textContent = "Shoting Guard";
+            name.textContent = player.playerName;
+            treeProsent.textContent = "Tree Prosent: " + player.threePercent.toString();
+            +"%";
+            tProsent.textContent = "Tow Prosent: " + player.twoPercent.toString();
+            +"%";
+            points.textContent = "Points: " + player.points.toString();
+            sg.appendChild(blueHead);
+            sg.appendChild(name);
+            sg.appendChild(tProsent);
+            sg.appendChild(treeProsent);
+            sg.appendChild(points);
+            break;
+        case "SF":
+            sf.innerHTML = "";
+            blueHead.textContent = "Smal Forward";
+            name.textContent = player.playerName;
+            treeProsent.textContent = "Tree Prosent: " + player.threePercent.toString();
+            +"%";
+            tProsent.textContent = "Tow Prosent: " + player.twoPercent.toString();
+            +"%";
+            points.textContent = "Points: " + player.points.toString();
+            sf.appendChild(blueHead);
+            sf.appendChild(name);
+            sf.appendChild(tProsent);
+            sf.appendChild(treeProsent);
+            sf.appendChild(points);
+            break;
+        case "PF":
+            pf.innerHTML = "";
+            blueHead.textContent = "Point Forward";
+            name.textContent = player.playerName;
+            treeProsent.textContent = "Tree Prosent: " + player.threePercent.toString();
+            +"%";
+            tProsent.textContent = "Tow Prosent: " + player.twoPercent.toString();
+            +"%";
+            points.textContent = "Points: " + player.points.toString();
+            pf.appendChild(blueHead);
+            pf.appendChild(name);
+            pf.appendChild(tProsent);
+            pf.appendChild(treeProsent);
+            pf.appendChild(points);
+            break;
+        case "C":
+            c.innerHTML = "";
+            blueHead.textContent = "Center";
+            name.textContent = player.playerName;
+            treeProsent.textContent = "Tree Prosent: " + player.threePercent.toString();
+            +"%";
+            tProsent.textContent = "Tow Prosent: " + player.twoPercent.toString();
+            +"%";
+            points.textContent = "Points: " + player.points.toString();
+            c.appendChild(blueHead);
+            c.appendChild(name);
+            c.appendChild(tProsent);
+            c.appendChild(treeProsent);
+            c.appendChild(points);
+            break;
+    }
 }
